@@ -1,12 +1,9 @@
 import React from 'react';
 import { useRecoilState, atom } from 'recoil'
+import { todoListState } from './../atom/todoListState'
 
 function TodoItem({item}) {
     const [todoList, setTodoList] = useRecoilState(todoListState);
-    const todoListState = atom({
-        key: 'todoListState',
-        default: [],
-      });
     const index = todoList.findIndex((listItem) => listItem === item);
   
     const editItemText = ({target: {value}}) => {
